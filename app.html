@@ -1,0 +1,25 @@
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Disco Light Show</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div id="disco-lights">
+			<img src="hakari.gif" alt="Hakari" id="hakari-gif">
+		</div> 
+		<audio id="audio-player" autoplay loop>   
+			<source src="audio1.mp3" type="audio/mpeg"></audio> 
+		<script>
+			const audioPlayer = document.getElementById('audio-player');
+	
+			audioPlayer.addEventListener('ended', () => {
+				audioPlayer.currentTime = 0; // Reset playback to start
+				audioPlayer.play();
+			});
+		</script> 
+	</body>
+	</html>
