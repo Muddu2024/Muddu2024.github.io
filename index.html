@@ -1,25 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disco Light Show</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button onclick="playAudio()">Click to Start/Stop Audio</button>
+  <div id="disco-lights" onclick="playAudio()">
+    <img src="hakari.gif" alt="Hakari" id="hakari-gif">
+  </div>
 
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset='utf-8'>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Disco Light Show</title>
-		<link rel="stylesheet" href="styles.css">
-	</head>
-	<body>
-		<div id="disco-lights">
-			<img src="hakari.gif" alt="Hakari" id="hakari-gif">
-		</div> 
-		<audio id="audio-player" autoplay loop>   
-			<source src="audio1.mp3" type="audio/mpeg"></audio> 
-		<script>
-			const audioPlayer = document.getElementById('audio-player');
-	
-			audioPlayer.addEventListener('ended', () => {
-				audioPlayer.currentTime = 0; // Reset playback to start
-				audioPlayer.play();
-			});
-		</script> 
-	</body>
-	</html>
+  <audio id="audio-player">
+    <source src="audio1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  
+
+  <script>
+    const audioPlayer = document.getElementById('audio-player');
+
+    function playAudio() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        this.textContent = "Click to Stop Audio."; // Change button text
+      } else {
+        audioPlayer.pause();
+        this.textContent = "Click to Start Audio."; // Change button text
+      }
+    }
+
+    audioPlayer.addEventListener('ended', () => {
+      audioPlayer.currentTime = 0; // Reset playback to start
+    });
+  </script>
+</body>
+</html>
