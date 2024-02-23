@@ -39,3 +39,16 @@ body {
     background-position: 0 0, 25px 25px;
   }
 }
+button {
+  text-decoration: none; /* Remove default underline */
+  font-family: monospace; /* Use a fixed-width font */
+  color: #fff; /* Set white text color */
+  background-color: #000; /* Set black background color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove border */
+  cursor: pointer; /* Show hover cursor */
+
+  /* Dot letter effect */
+  letter-spacing: 5px; /* Adjust spacing between letters */
+  text-shadow: 0 0 1px #fff; /* Add white shadow around each letter */
+}
